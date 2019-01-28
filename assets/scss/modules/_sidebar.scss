@@ -1,0 +1,45 @@
+.sidebar {
+  .widget {
+    padding-bottom: rem-calc(30);
+    li {
+    display: block;
+    }
+    a {
+      padding-left: 0;
+      font-size: rem-calc(14);
+    }
+    i {
+      font-size: rem-calc(16) !important;
+      padding-bottom: 0 !important;
+    }
+    img {
+      box-shadow: none;
+      display: inline-block;
+    }
+    h6 {
+      font-weight: 600;
+    }
+  } //End .widget
+
+  @include breakpoint(small) {
+    @include grid-column(12);
+  }
+
+  @include breakpoint(medium) {
+    @include grid-column(4);
+    margin-top: 1rem;
+  }
+  @include breakpoint(large) {
+    padding-top: rem-calc(30);
+    padding-left: rem-calc(40);
+  }
+
+  //Categories widget
+  #categories-3 ul {
+    margin-left:0;
+  }
+} //End .sidebar
+
+.page #main-container .sidebar {
+  width:100%;
+}

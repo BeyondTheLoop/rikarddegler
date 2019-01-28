@@ -1,0 +1,269 @@
+.home {
+  canvas {
+    height:rem-calc(400) !important;
+
+    @include breakpoint (medium down) {
+      display: none;
+    }
+  }
+  .pulse {
+  display: block;
+  box-shadow: 0 0 0 rgba(204,169,44, 0.4);
+  animation: pulse 2s infinite;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+  }
+  70% {
+      -webkit-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+  }
+  100% {
+      -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+    box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+  }
+  70% {
+      -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+      box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+  }
+  100% {
+      -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+      box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+  }
+}
+
+  .row {
+    max-width: 100%;
+  }
+
+  .full-section {
+    border-bottom: 1px dashed $yellow;
+    animation: border_color_change infinite 60s;
+    -webkit-animation: border_color_change infinite 60s; /* Chrome and Safari */
+    min-height: 100vh;
+
+    @include breakpoint(small) {
+      padding-bottom: rem-calc(40);
+    }
+
+    @include breakpoint(large) {
+      padding-bottom: rem-calc(0);
+    }
+
+    .header {
+      h4 {
+        text-align: right;
+        padding-top: rem-calc(20);
+      }
+    }
+  }
+
+  /*
+  *
+  *
+  * 3 CARDS WITH ICONS
+  *
+  *
+  */
+
+  #cards {
+    min-height: auto;
+    margin-top: rem-calc(45);
+
+    .card {
+      border: none;
+      background: none;
+    }
+
+    .icon {
+      font-size:rem-calc(130);
+      display: table;
+      margin: 0 auto;
+    }
+
+    i {
+      @include breakpoint(medium down) {
+        padding: 0 0 rem-calc(50) 0;
+      }
+      @include breakpoint(large up) {
+        margin-top: rem-calc(-250) !important;
+        padding: 0 0 rem-calc(170) 0;
+      }
+    }
+
+    h2 {
+      font-weight: 600;
+      color: $yellow;
+    }
+
+    .large-4 {
+      padding-bottom: rem-calc(80);
+    }
+
+    .card-divider {
+      text-align: center;
+      background-color: transparent;
+      color:$white;
+    }
+
+    .card-section {
+      text-align: center;
+
+      @include breakpoint(small) {
+        padding: 1.5rem 3rem;
+        ul {
+          display: table;
+          margin: 1rem auto;
+          text-align: left;
+        }
+      }
+
+      @include breakpoint(large) {
+        padding: 1.5rem 1rem;
+        ul {
+          display: block;
+          margin: 1rem;
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  /*
+  *
+  *
+  * CLIENTS
+  *
+  *
+  */
+
+  #clients {
+    .medium-4 {
+      @include breakpoint (large up) {
+        padding-top: rem-calc(180);
+      }
+      @include breakpoint (medium down) {
+        padding-top: rem-calc(80);
+      }
+
+      img {
+        display: table;
+        margin: 0 auto;
+        max-width: rem-calc(170);
+      }
+    }
+  }
+
+  /*
+  *
+  *
+  * ABOUT ME
+  *
+  *
+  */
+
+  #about-me {
+
+    margin-top: 0;
+
+    .medium-4 {
+      text-align: center;
+
+      h2 {
+        margin: rem-calc(30) 0;
+      }
+    }
+
+    .icon {
+      padding-top: rem-calc(70);
+      font-size:rem-calc(130);
+      display: table;
+      margin: 0 auto;
+    }
+
+    ul {
+      list-style-type: none;
+      margin-left: 0;
+    }
+  }
+
+  /*
+  *
+  *
+  * CURRENT PROJECTS
+  *
+  *
+  */
+
+  #current-projects {
+
+    .background {
+      @include breakpoint(small) {
+        background-color: transparent;
+      }
+      @include breakpoint(medium) {
+        background-color: $yellow;
+        margin-top:rem-calc(130);
+      }
+      padding: rem-calc(30) rem-calc(20) 0 rem-calc(20);
+      margin-bottom: rem-calc(50);
+      p {
+        margin-top: rem-calc(20);
+        color: $outer-space;
+      }
+    }
+
+    .button {
+      margin: rem-calc(10) 0;
+      font-size: rem-calc(14);
+    }
+
+    @include breakpoint(small) {
+      background: url('../images/bowl-skater-background-steadywp-wordpress-maintenance-700.jpg') 50% 50%;
+      background-size: cover;
+      //background-position: top;
+      height: rem-calc(550);
+      text-align: left;
+      h1 {
+        font-size:1.8rem;
+      }
+    }
+
+    @include breakpoint(medium) {
+      background: url('../images/bowl-skater-background-steadywp-wordpress-maintenance-1100.jpg') 0% 65%;
+      background-size: cover;
+      height: rem-calc(450);
+      h1 {
+        font-size: 2.875rem;
+      }
+    }
+
+    @include breakpoint(large) {
+      background: url('../images/bowl-skater-background-steadywp-wordpress-maintenance-1250.jpg') 0% 65%;
+      background-size: cover;
+      height: rem-calc(600);
+    }
+
+    @include breakpoint(xlarge) {
+      background: url('../images/bowl-skater-background-steadywp-wordpress-maintenance-1250.jpg') 0% 65%;
+      background-size: cover;
+    }
+
+    @include breakpoint(xxlarge) {
+      background: url('../images/bowl-skater-background-steadywp-wordpress-maintenance-2000.jpg') 0% 65%;
+      background-size: cover;
+      height: rem-calc(650);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color:$outer-space;
+    }
+  }
+
+} //End home

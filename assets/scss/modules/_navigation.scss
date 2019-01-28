@@ -1,0 +1,176 @@
+// Navigation breakpoints
+.desktop-menu, .top-bar-left {
+  @include show-for(medium);
+}
+
+#mobile-menu, .title-bar {
+  @include hide-for(medium);
+
+  //Burger menu
+  .menu-icon {
+    float: right;
+    margin-top: rem-calc(5);
+  }
+
+  .menu-icon::after {
+    background: $light-gray;
+    box-shadow: 0 7px 0 $light-gray, 0 14px 0 $light-gray;
+  }
+}
+
+#masthead {
+  z-index: 1;
+  position: fixed;
+  top:0;
+  min-width: 100%;
+  padding: 0;
+  border-bottom:1px dashed $yellow;
+  margin-bottom: rem-calc(10);
+  animation: border_color_change infinite 60s;
+  -webkit-animation: border_color_change infinite 60s; /* Chrome and Safari */
+}
+
+//#masthead logged in
+.admin-bar #masthead {
+  position: fixed;
+  top:rem-calc(32);
+  min-width: 100%;
+  padding: 0;
+    @media only screen and (max-width: 782px) {
+      top:rem-calc(46);
+    }
+}
+
+#content-container {
+  margin-top: rem-calc(45);
+    @include breakpoint(small down) {
+      margin-top: rem-calc(41);
+    }
+}
+
+ul.menu li.home {
+  padding-left: rem-calc(70);
+}
+
+#rikard-profile {
+  @include breakpoint(small) {
+    display:none;
+  }
+  @include breakpoint(medium) {
+    display: block;
+    position: absolute;
+    top:rem-calc(12);
+    left:rem-calc(15);
+    max-width:rem-calc(60);
+    max-height:rem-calc(60);
+    border-radius: 100%;
+  }
+}
+
+//Current menu item
+.current_page_item a {
+  color:yellow;
+}
+
+// Mobile menu
+.off-canvas {
+  > ul.menu {
+    height: 100vh;
+    padding: 1rem;
+
+    a {
+      color: $white;
+      font-weight: 600;
+      font-size: rem-calc(18);
+      opacity: .75;
+    }
+
+    .is-accordion-submenu-parent > a::after {
+      display: block;
+      width: 0;
+      height: 0;
+      border: inset 6px;
+      content: '';
+      border-bottom-width: 0;
+      border-top-style: solid;
+      border-color: $white transparent transparent;
+      position: absolute;
+      top: 50%;
+      margin-top: -3px;
+      right: 1rem;
+      }
+  }
+
+  .menu .active > a { background-color: lighten($outer-space, 10%); }
+
+
+}
+
+.title-bar-title {
+  a {
+    font-size: 1rem;
+    color: $white;
+  }
+}
+
+// Tablet and desktop menu
+.top-bar {
+  .menu .home a {
+    font-size: rem-calc(12);
+    color: $white;
+  }
+
+  .menu a {
+    height: 45px;
+    line-height: 45px;
+    color: $white;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-weight: bold;
+    font-size: rem-calc(12);
+    line-height: rem-calc(20);
+
+    &:hover:not(.button) {
+      color:$yellow;
+    }
+  }
+
+  .current_page_item a {
+    color:$yellow;
+  }
+
+  .menu .active > a {
+    background-color: transparent;
+  }
+
+  ul.is-dropdown-submenu li {
+    //background-color:$primary-color;
+    border-bottom: 1px solid $yellow;
+  }
+
+  .menu>li:not(.menu-text)>a { padding: 1rem; }
+
+  .dropdown.menu .submenu { border: 0; }
+  .dropdown.menu .has-submenu.is-down-arrow a { padding-right: 1rem; }
+  .dropdown.menu .has-submenu.is-down-arrow > a::after { border: 0; }
+  .dropdown.menu:first-child > li.is-dropdown-submenu-parent > a::after { display: none; }
+}
+
+// Basic styles for post navigation. Nicolas Gallagher's "Micro clearfix"
+// https://css-tricks.com/snippets/css/clear-fix/
+.post-navigation:before,
+.post-navigation:after {
+  content: "";
+  display: table;
+}
+
+.post-navigation:after {
+  clear:both;
+}
+
+.nav-previous { float:left; }
+.nav-next { float:right; }
+
+.title-bar {
+    padding: 1.5rem;
+}

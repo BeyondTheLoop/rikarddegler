@@ -1,0 +1,154 @@
+@keyframes border_color_change {
+  0%   {border-bottom:1px dashed $white;}
+  25%  {border-bottom:1px dashed $yellow;}
+  50%  {border-bottom:1px dashed $primary-color;}
+  75%  {border-bottom:1px dashed $yellow;}
+  100% {border-bottom:1px dashed $white;}
+}
+
+@-webkit-keyframes border_color_change /* Safari and Chrome - necessary duplicate */ {
+  0%   {border-bottom:1px dashed $white;}
+  25%  {border-bottom:1px dashed $yellow;}
+  50%  {border-bottom:1px dashed $primary-color;}
+  75%  {border-bottom:1px dashed $yellow;}
+  100% {border-bottom:1px dashed $white;}
+}
+
+@keyframes border_color_change_top {
+  0%   {border-top:1px dashed $white;}
+  25%  {border-top:1px dashed $yellow;}
+  50%  {border-top:1px dashed $primary-color;}
+  75%  {border-top:1px dashed $yellow;}
+  100% {border-top:1px dashed $white;}
+}
+
+@-webkit-keyframes border_color_change /* Safari and Chrome - necessary duplicate */ {
+  0%   {border-top:1px dashed $white;}
+  25%  {border-top:1px dashed $yellow;}
+  50%  {border-top:1px dashed $primary-color;}
+  75%  {border-top:1px dashed $yellow;}
+  100% {border-top:1px dashed $white;}
+}
+
+@keyframes border_color_change_right {
+  0%   {border-right:1px dashed $white;}
+  25%  {border-right:1px dashed $yellow;}
+  50%  {border-right:1px dashed $primary-color;}
+  75%  {border-right:1px dashed $yellow;}
+  100% {border-right:1px dashed $white;}
+}
+
+@-webkit-keyframes border_color_change /* Safari and Chrome - necessary duplicate */ {
+  0%   {border-right:1px dashed $white;}
+  25%  {border-right:1px dashed $yellow;}
+  50%  {border-right:1px dashed $primary-color;}
+  75%  {border-right:1px dashed $yellow;}
+  100% {border-right:1px dashed $white;}
+}
+
+/*
+*
+*
+* Page template
+*
+*
+*/
+
+.page-template {
+  background-color: $outer-space;
+  section#breadcrumbs {
+    @include breakpoint(small) {
+      margin-top: rem-calc(60);
+    }
+    @include breakpoint(medium) {
+      margin-top: rem-calc(45);
+    }
+  }
+}
+
+/*
+*
+*
+* Border classes
+*
+*
+*/
+
+.section-border-bottom {
+  border-bottom: 1px dashed $yellow;
+  animation: border_color_change infinite 60s;
+  -webkit-animation: border_color_change infinite 60s; /* Chrome and Safari */
+}
+
+/*
+*
+*
+* Breadcrumbs Yoast
+*
+*
+*/
+
+section#breadcrumbs {
+  padding:rem-calc(15) 0;
+
+  p {
+    margin-bottom: 0;
+    font-size: rem-calc(12);
+    text-align: right;
+  }
+  @include breakpoint(small only) {
+    span.pre-breadcrumb {
+      display:none;
+    }
+  }
+}
+
+/*
+*
+*
+* Elements
+*
+*
+*/
+
+label {
+  color: $white;
+}
+
+pre {
+  background-color: $outer-space;
+  padding: rem-calc(20);
+  color: $white;
+  margin-bottom: rem-calc(40);
+}
+
+hr {
+  border-bottom: 1px dashed $yellow;
+  animation: border_color_change infinite 60s;
+  -webkit-animation: border_color_change infinite 60s; /* Chrome and Safari */
+}
+
+/*
+*
+*
+* Pagination
+*
+*
+*/
+
+ul.pagination {
+  margin-bottom: rem-calc(30);
+
+  span.current {
+    border-radius: 100%;
+    padding: rem-calc(6) rem-calc(12);
+  }
+  a {
+    color: $white;
+  }
+  a:hover {
+    color: $primary-color;
+    background-color: $white;
+    border-radius: 100%;
+  }
+} //End pagination

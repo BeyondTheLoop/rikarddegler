@@ -1,0 +1,87 @@
+#footer-container {
+  border-top:1px dashed $yellow;
+  animation: border_color_change_top infinite 60s;
+  -webkit-animation: border_color_change_top infinite 60s; /* Chrome and Safari */
+  background-color: $outer-space;
+  color:$white;
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+
+  h6 {
+    font-weight: 600;
+    color:$yellow;
+    margin-bottom: rem-calc(20);
+  }
+
+  //Contact form
+  .wpcf7 {
+    label {
+      color:$white;
+      font-weight: 600;
+    }
+
+    input, textarea {
+      background-color: $outer-space;
+      color: $white;
+      font-size: rem-calc(14);
+      font-weight: 600;
+      border:2px solid $primary-color;
+      margin-top: rem-calc(10);
+    }
+
+    input:focus, textarea:focus {
+      box-shadow: none;
+      border: 2px solid $yellow;
+    }
+
+    #recaptcha {
+      background:$outer-space;
+      margin-bottom: rem-calc(20);
+    }
+
+    .wpcf7-submit {
+      min-width: 100%;
+      padding: 1.2em 1em;
+      font-size: rem-calc(16);
+      font-weight: 600;
+      background: $yellow;
+      color: $outer-space;
+      border: none;
+    }
+    .wpcf7-submit:hover {
+      background-color: $primary-color;
+      color: $white;
+    }
+  }
+
+  #footer {
+    @include grid-row();
+    max-width: 100%;
+    padding: 0;
+
+    .widget {
+      padding: rem-calc(30);
+      a, .post-date {
+        font-size: rem-calc(14);
+      }
+    }
+
+    .widget:nth-child(2) {
+      @include breakpoint(medium down) {
+        min-height:0;
+      }
+      @include breakpoint(large) {
+        min-height: rem-calc(780);
+        text-align: center;
+      }
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+} //End #footer-container

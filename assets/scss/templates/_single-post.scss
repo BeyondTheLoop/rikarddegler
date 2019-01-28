@@ -1,0 +1,81 @@
+#single-post {
+  @include grid-row();
+
+  .main-content {
+    padding-top: rem-calc(30);
+    border-right: 1px dashed $yellow;
+    animation: border_color_change_right infinite 60s;
+    -webkit-animation: border_color_change_right infinite 60s; /* Chrome and Safari */
+
+    .button {
+      min-width: 100%;
+    }
+
+    @include breakpoint(small) {
+      @include grid-column(12);
+    }
+
+    @include breakpoint(medium) {
+      @include grid-column(8);
+    }
+
+    @include breakpoint(large) {
+      padding-right: rem-calc(40);
+    }
+
+    time.updated, p.author, footer p {
+      font-size: rem-calc(12);
+    }
+  }
+
+  #related-posts {
+    padding:rem-calc(30) 0;
+
+    h3 {
+      border-bottom:1px dashed $yellow;
+      animation: border_color_change infinite 60s;
+      -webkit-animation: border_color_change infinite 60s; /* Chrome and Safari */
+      padding-bottom: rem-calc(30);
+      margin-bottom: rem-calc(30);
+    }
+
+    .columns {
+      margin-bottom: rem-calc(30);
+    }
+
+    @include breakpoint(medium) {
+      .columns:nth-child(odd) {
+        padding-right:0;
+      }
+
+      .columns:nth-child(even) {
+        padding-left:0;
+      }
+    }
+
+    @include breakpoint(small only) {
+      .columns {
+        padding:0;
+      }
+    }
+
+    img {
+      margin: rem-calc(20) 0;
+      box-shadow: none;
+    }
+    .featured-image-link {
+      display: block;
+      padding: rem-calc(30);
+      background: $outer-space;
+    }
+  }
+} // End #single-post
+
+.no-featured-image .container {
+  @include breakpoint(small) {
+    margin-top: rem-calc(60);
+  }
+  @include breakpoint(medium) {
+    margin-top: rem-calc(45);
+  }
+}
